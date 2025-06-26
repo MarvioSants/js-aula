@@ -6,6 +6,9 @@
     <title>Eventos (como cliques)</title>
 </head>
 <body>
+
+
+    <!--
     <h1 id="title">ESTUDO PROFUNDADO SOBRE O "DOM"</h1>
     <button onclick="mudarH1()">Clique no Botão</button>
 
@@ -15,6 +18,23 @@
             document.getElementById("title").innerText= "Continuação sobre o estudo de  'Dom' no js"
         }
     </script>
-    
+    -->
+
+    <h1 id="mudarTitle">Bem vindo canal de estudo de Marvio</h1>
+    <button onclick="mudarTitulo()">Mudar Título Acima </button>
+
+
+    <p id="paragrafo">sinta-se acolhido por esse repositório</p>
+    <button onclick="mudarParagrafo()">clique Para Alterar</button>
+
+    <script>
+        function mudarTitulo(){
+            document.getElementById("mudarTitle").innerText ="Você textou esse botão de clique";
+
+        }
+        function mudarParagrafo(){
+        document.getElementById("paragrafo").innerText ="Você acaba de testar o botão de mudar paragráfo";
+        }
+    </script>
 </body>
 </html>
