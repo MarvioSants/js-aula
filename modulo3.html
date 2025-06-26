@@ -15,8 +15,8 @@
       console.log(" Faça um loop que mostre os números pares de 1 até 20.");
       //    let numero = 1;
 
-      for (numero = 2; numero <= 20; numero++) {
-        console.log("Número: " + numero++);
+      for (numero = 2; numero <= 20; numero+=2) {
+        console.log("Número: " + numero);
       }
 
       console.log("Crie um contador regressivo de 10 até 1.");
@@ -27,6 +27,12 @@
       console.log(
         "(Desafio bônus) Calcule a soma de todos os números de 1 até 100."
       );
+
+      let soma = 0;
+      for(let i = 1; i <=100; i++){
+        soma+= i;
+      }
+      console.log("Soma total é: "+soma);
     </script>
   </body>
 </html>
