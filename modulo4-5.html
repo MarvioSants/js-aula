@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM e Eventos no javaScript</title>
+</head>
+<body>
+    <h1 id="titulo">Olá, mundo</h1>
+
+    <!-- Testando eventos com cliques-->
+
+    <button onclick="mudarTexto()">Clique aqui</button>
+    <p id="mensagem">Texto Original</p>
+
+
+    <script>
+        /*Aprender a manipular elementos da página com JavaScript e responder a eventos, como cliques, digitação, etc.
+        DOM = Document Object Model*/
+
+        let titulo = document.getElementById("titulo"); //pega o elemento com ID "titulo"
+        titulo.innerText = "Olá, Marvio"; //altera o texto que aparece no <h1>
+
+            //Testando eventos com cliques
+            
+            function mudarTexto() {//aqui eu criei um função para mudar o texto de <p>
+                document.getElementById("mensagem").innerText ="Você clicou no botão!";
+            }
+    </script>
+    
+</body>
+</html>
