@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>trabalhando com operadores no js</title>
+  </head>
+  <body>
+    <script>
+      console.log("VERIFICAR SE NÚMERO É PAR OU IMPAR");
+
+      let numero = 10;
+      if (numero % 2 == 0) {
+        console.log("Número par: " + numero);
+      } else {
+        console.log("Número impar: " + numero);
+      }
+
+      console.log(
+        "Verificar se o aluno passou por nota mínima e frequência mínima"
+      );
+      let media = 8;
+      let frequencia = 80;
+      if (media >= 7 && frequencia >= 80) {
+        console.log(
+          "Aluno aprovado com média:" +
+            media +
+            " e frequencia:" +
+            frequencia +
+            "%."
+        );
+      } else if (media >= 7 && frequencia <= 79) {
+        console.log("Aluno reprovado com frequência:" + frequencia + "%.");
+      } else if (media < 7 && frequencia >= 80) {
+        console.log("Aluno reprovado por nota:" + media);
+      } else {
+        console.log(
+          "Aluno reprovado por nota:" + media + " e frequência abaixa de 80%."
+        );
+      }
+      console.log(
+        "Promoção em loja: desconto para clientes VIP ou compra acima de R$100"
+      );
+
+      let clienteVIP = false;
+      let valorCompra = 80;
+      if (clienteVIP || valorCompra >= 100) {
+        console.log("Você tem direito ao desconto da loja!");
+      } else {
+        console.log(
+          "Torne-se um cliente VIP para obter os descontos da nossa loja!"
+        );
+      }
+    </script>
+  </body>
+</html>
