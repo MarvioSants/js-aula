@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>criando um input com e botão</title>
+</head>
+<body>
+
+    <input type="text"  id= "input1" placeholder="Digite algo: ">
+    <button onclick="mostrarTexto()">Mostrar</button>
+
+    <p id="paragrafo1"></p>
+
+    <script>
+       /* function mostrarTexto(){
+        let resultado = document.getElementById("input1").value;//value: acessa ou modifica o valor de um elemnento de formulário
+        document.getElementById("paragrafo1").textContent = resultado;//textContent: acessar ou alterar o conteúdo de texto de um elemento HTML
+    }*/
+        function mostrarTexto() {
+        let input = document.getElementById("input1");
+        let resultado = input.value;
+
+        document.getElementById("paragrafo1").textContent = "Você digitou: " + resultado;
+        input.value = ""; // limpa o campo após mostrar
+    }
+
+    </script>
+</body>
+</html>
