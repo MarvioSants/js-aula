@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetivo do Módulo 6:</title>
+    <style>
+        body{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background: rgb(224, 197, 218);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+        .container{
+            background: rgb(54, 211, 190);
+            padding: 35px; /*altura*/
+            border-radius: 30%;/*boradas arredondadas*/
+            box-shadow: 0 8px 16px rgba(0, 0, 0.1); /*parece um flutuante*/
+            width: 100%;/*Largura*/
+            max-width: 400%;
+            text-align: center;
+
+        }
+        h1{
+            margin-bottom: 20px;
+            color: #112;
+        }
+        input, button{
+            padding: 12px;/*preenchimento*/
+            margin:10px 0; /*margem*/
+            border: 1px solid rgb(99, 99, 168); /*tamanho da borda e cor*/
+            border-radius: 8px;/*tamanho da borda arredondada*/
+            width: 101px;
+            font-size: xx-small;
+
+        }
+        input{
+            outline: none;
+            border-color: rgb(0, 255, 149);/*cor da borda, apenas para o input*/
+
+        }
+        button{
+            background-color: rgb(63, 58, 58);/*cor do botão*/
+            color: white;/*cor do nome no botão*/
+            border: none;
+            cursor: pointer;/*uma mão ao passar o mouse por cima*/
+            transition: background 0.3s;
+        }
+        button :hover{
+            background-color: rgb(3, 255, 24);
+        }
+        #resultado{
+            margin-top: 20px;
+            margin-top: 18px;
+            color: black;
+        }
+        label{
+            display: block;
+            margin-top: -8px;
+            font-size: 14px;
+            color: #121;
+        }
+
+    </style>
+        <!-- Desenvolver mini aplicações completas, direto no navegador, usando:
+
+        HTML + CSS simples (estrutura e estilo)
+        JavaScript com lógica, eventos e DOM
+        Boas práticas de organização
+        -->
+</head>
+<body>
+    <div class="container">
+         <h1>🧮CALCULADORA DE IDADE</h1>
+
+    
+    <label for="ano">Digite o ano do seu nascimento:</label>
+    <input type="number" id="ano" placeholder="Ex:2002">
+    <button onclick="calcularIdade()">Calcular</button>
+
+    <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularIdade(){
+            let anoNascimento = document.getElementById("ano").value;//pega o id "ano" do input
+            let anoAtual = new Date().getFullYear();// new Date() → Cria um objeto de data com a data e hora do momento atual e .getFullYear() → Extrai somente o ano completo (com 4 dígitos) da data criada
+
+            if (anoNascimento ==="") {
+                alert("Campo vazio, por favor, preencha para continuar.");
+                return;
+            }
+            let idade = anoAtual - anoNascimento;
+            let faixaDeIdade ="";
+
+            if (idade < 12) {
+                faixaDeIdade = "Criança";
+            }
+            else if (idade <18) {
+                faixaDeIdade = "Adolecente";
+            }
+            else if(idade<60){
+                faixaDeIdade = "Adulto";
+            }
+            else{
+                faixaDeIdade = "Idoso";
+            }
+
+            document.getElementById("resultado").innerText = "Sua idade é "+idade + " e está na faixa etária de "+faixaDeIdade;
+
+        }
+    </script>
+    
+</body>
+</html>
