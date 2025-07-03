@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Média Escolar</title>
+    <style>
+        body{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: rgb(194, 240, 224);
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container{
+            background-color: pink ;
+            border-radius: 30%;
+            padding: 30px 20%; /*tMnho visual*/
+            box-shadow: 0 100px 30px black;
+            width: auto; 
+            max-width: 400%;  
+        }
+        .formulario{
+            text-align: center;
+        }
+        .formulario label,
+        .formulario input {
+            display: block;
+            margin: 10px auto;
+        }
+        .formulario button {
+            display: block;
+            margin: 10px auto;
+        }
+
+        h1{
+            color: blueviolet;
+            margin-bottom: 1px;
+        }
+        label{
+            display: block;
+            margin-top: 10px;
+            font: weight 1px;
+            color: #555;
+        }
+        input, button{
+            width: 250px;
+            padding: 5px;
+            margin-top: 1px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        button{
+            margin-top: 20px;
+            color:black;
+            background-color: blueviolet;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 150px;
+        }
+        button:hover{
+            color: black;
+            background-color: bisque;
+        }
+        
+    
+
+    </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>🧮Calculadora de Média</h1>
+     <div class="formulario">
+        <label for="nota1">Nota I </label>
+        <input type="number" id="nota1" min="0" max="10" placeholder="Nota entre 0 e 10">
+
+        <label for="nota2">Nota II </label>
+        <input type="number" id="nota2" min="0" max="10" placeholder="Nota entre 0 e 10">
+
+        <button onclick="calcularMedia()">Calcular Média</button>
+
+        <p id="resultado"></p>
+    </div>
+
+  </div>
+    <script>
+
+        function calcularMedia(){
+            let notaOne = parseFloat(document.getElementById("nota1").value); //converte o valor do input (que é texto) em número com casas decimais (parseFloat)
+            let notaTwo = parseFloat(document.getElementById("nota2").value);
+
+            if(notaOne < 0 || notaOne >10 || notaTwo <0 || notaTwo >10){
+                alert("As notas devem está entre 0 e 10")
+                return;
+            }
+
+            if(isNaN(notaOne) || isNaN(notaTwo)){
+                alert("Preecha corretamente!");
+                return;
+            }
+            let media = (notaOne + notaTwo )/ 2;
+            let situacao = "";
+
+            if(media >= 7){
+                situacao = "✅ Aprovado";
+            }
+            else if(media >= 5){
+                situacao = "⚠️ Recuperação";
+            }
+            else
+            situacao = "❌ Reprovado"
+
+            document.getElementById("resultado").innerText=
+            "Resultado: " +"Média do aluno é " + media.toFixed(2) + " e sua situação é "+situacao;
+
+        }
+    </script>
+    
+</body>
+</html>
