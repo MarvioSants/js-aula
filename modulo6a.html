@@ -97,6 +97,11 @@
             let idade = anoAtual - anoNascimento;
             let faixaDeIdade ="";
 
+            if (anoNascimento > anoAtual) {
+            alert("Ano inválido: ano de nascimento não pode ser no futuro")
+            return;
+        }
+
             if (idade < 12) {
                 faixaDeIdade = "Criança";
             }
@@ -113,6 +118,8 @@
             document.getElementById("resultado").innerText = "Sua idade é "+idade + " e está na faixa etária de "+faixaDeIdade;
 
         }
+
+        
     </script>
     
 </body>
