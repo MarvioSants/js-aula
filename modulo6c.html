@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Márcio Santos">
+  <meta name="description" content="Página de exemplo com cabeçalho HTML completo.">
+  <meta name="keywords" content="login, senhas, usuario, SEO, programação web">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body{
+        background-color: #999;
+        font-size: larger;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+
+    }
+    .loginUser{
+        background-color: rgb(188, 203, 219);
+        padding: 25px;
+        border: none;
+        border-radius: 10%;
+        display: grid;
+        width: 350px;  
+        max-width: 400px;
+        box-shadow: 0 30px 8px  black ;
+    }
+    h1{
+        margin-top: 10px;
+        color: rgb(94, 91, 87);
+        margin:5px;
+
+    }
+    input{
+        background-color: #cecece86;
+        width: 100%;
+        width: 350px;
+        border-style: inset;
+        border-radius: 10px;
+        margin-bottom: 2px;
+    }
+    button{
+        width: 100px;
+        border-radius: 12px;
+        display: block;
+        margin: 15px auto auto;
+
+    }
+  </style>
+  <title>modulo 6c-validador de login</title>
+
+</head>
+<body>
+    <div class="loginUser">
+        <h1> validador de  Página Login</h1>
+
+        <input type="text" id="usuario" placeholder="Digite o usuario">
+        <input type="password" id="senha" placeholder="Digite senha de login">
+        <button onclick="validar()">Entrar</button>
+        <p id="mensagem"></p>
+    </div>
+
+    <script>
+      function validar(){
+          let usuario1 = document.getElementById("usuario").value;
+        let senha1 = document.getElementById("senha").value;
+        let mensagem1 = document.getElementById("mensagem");
+
+        const login = "admin";
+        const senhaCorreta = "admin";
+
+        if (usuario1 === "" || senha1 ==="") {
+            mensagem1.innerText = "⚠️Todos os campos devem ser preenchidos";
+            mensagem1.style.color="orange";
+        }
+        else if(usuario1 === login && senha1 === senhaCorreta){
+            mensagem1.innerText = "✅ Login bem sucedido";
+            mensagem1.style.color="green";
+        }
+        else{
+           mensagem1.innerText= "❌Usuário ou senha incorreta!"
+        mensagem1.style.color="red";
+    }
+      }
+    </script>
+</body>
+</html>
