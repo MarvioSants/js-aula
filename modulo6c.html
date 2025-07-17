@@ -67,10 +67,17 @@
     </div>
 
     <script>
+            /*Limpar os campos após login bem-sucedido
+            Focar no primeiro campo automaticamente
+            Criar 3 tentativas: se errar 3 vezes, bloquear botão (avançado)*/
+
+            let tentativas = 0;
+
       function validar(){
-          let usuario1 = document.getElementById("usuario").value;
-        let senha1 = document.getElementById("senha").value;
-        let mensagem1 = document.getElementById("mensagem");
+            let usuario1 = document.getElementById("usuario").value;
+            let senha1 = document.getElementById("senha").value;
+            let mensagem1 = document.getElementById("mensagem");
+            let botao = document.querySelector("button")
 
         const login = "admin";
         const senhaCorreta = "admin";
@@ -78,14 +85,41 @@
         if (usuario1 === "" || senha1 ==="") {
             mensagem1.innerText = "⚠️Todos os campos devem ser preenchidos";
             mensagem1.style.color="orange";
+            document.getElementById("usuario").focus();
         }
         else if(usuario1 === login && senha1 === senhaCorreta){
             mensagem1.innerText = "✅ Login bem sucedido";
             mensagem1.style.color="green";
+
+            //limpar os campos
+            document.getElementById("usuario").value = "";
+            document.getElementById("senha").value = "";
+
+            //focar no campo de usuário
+            document.getElementById("usuario").focus();
+
+            //desabilitar o botão após login bem-sucedido
+            botao.disabled = true;
+            botao.style.backgroundColor = "gray";
+            //botao.style.cursor = "not-allowed";
+            
+            //resetando tentativas
+            tentativas =  0;
+            botao.style.cursor = "pointer";
+                   
         }
         else{
-           mensagem1.innerText= "❌Usuário ou senha incorreta!"
-        mensagem1.style.color="red";
+            tentativas++;
+            mensagem1.innerText= "❌Usuário ou senha incorreta!"
+            mensagem1.style.color="red";
+            document.getElementById("usuario").focus();
+            if (tentativas >=3){
+                mensagem1.innerText = "❌ Você atingiu o número de tantativas possíveis"
+                mensagem1.style.color = "darkred";
+                botao.disabled = true;
+                botao.style.cursor = "not-allowed";
+
+            }
     }
       }
     </script>
