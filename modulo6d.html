@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Número Secreto</title>
+
+    <style>
+        body{
+            background-color: rgb(133, 145, 214);
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 2%;
+        }
+        .Container{
+            background-color: steelblue ;
+            padding:10px;
+            border-radius: 10px;
+            box-shadow: 0 30px 8px 5px black;
+            width: 400px;
+            max-width: 90%;
+            text-align: center;
+        }
+        h1{
+            color: blue;
+            margin-bottom: auto;
+            font-size: auto;
+        }
+        input{
+            width: 190px;
+            padding: 2px;
+            border-radius: 6.5px;
+            border: 1px solid gray;
+            margin-bottom:2.5px;
+            background-color: lightgray;            
+        }
+        input:focus{
+            outline: none;
+            border-color: rgb(132, 132, 192);
+            
+        }
+        button{
+            width: 85px;
+            padding: 1.5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            background-color: lightgray;
+        }
+        button:hover{
+            background-color: rgb(116, 108, 108);
+            color-scheme: black;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+<!--🔜 Agora, vamos para o Projeto D – Jogo do Número Secreto:
+👇 Resumo do que vai praticar:
+Conceito	Você vai usar
+Math.random() + Math.floor()	Para gerar o número secreto
+if/else com comparação	Para checar tentativas
+Laço while (ou tentativa única com botão)	Para múltiplas tentativas
+Inputs e DOM	Para receber e mostrar o palpite
+Funções + feedback visual	Para deixar o jogo legal e didático-->
+
+<div class="Container">
+    <h1>Projeto D – Jogo do Número Secreto</h1>
+    <p>Vamos criar um jogo onde o usuário tenta adivinhar um número secreto gerado pelo computador. O número estará entre 1 e 100, e o usuário terá várias tentativas para acertar.</p>
+
+    <input type="number" id="palpite" placeholder="Digite seu palpite" /><br />
+    <button onclick="iniciarJogo()">Tentar</button>
+    <p id="mensagem"></p>
+
+</div>
+<script>
+
+        const numeroSecreto = Math.floor(Math.random() *100) +1;
+        let tentativas = 0;
+        let acertou = false;
+        const maxTentativas = 10;
+
+    function iniciarJogo(){
+        let msg = document.getElementById("mensagem");
+        const palpite = document.getElementById("palpite").value;
+        tentativas++;
+        if(palpite===""){
+            msg.innerText ="Por favor, digite um número entre 1 e 100.";
+            return;
+        }
+
+        const numeroPalpite = parseInt(palpite);
+
+        if (isNaN(numeroPalpite) || numeroPalpite <1 || numeroPalpite >100) {
+
+            msg.innerText = "⛔ Número inválido! Digite um número entre 1 e 100.";
+            return;
+        }
+
+        if (numeroPalpite ===numeroSecreto) {
+            msg.innerText = `🎉Parabéns! Número secreto é ${numeroSecreto}. Você ultilizou ${tentativas} tentativa(s)!`;
+            acertou = true;
+            document.getElementById("palpite").disabled = true;
+        }
+        else if(tentativas >=10){
+            msg.innerText = `😢 Você esgotou o número de tentativas possíveis,  número secreto é: ${numeroSecreto}`;
+            document.getElementById("palpite").disabled = true;
+        }
+        else if(palpite < numeroSecreto){
+            msg.innerText = `O número escolhido é maior que ${numeroPalpite}. Você tem ${10 - tentativas} tentativas restantes!`;  
+        }
+        else if(palpite > numeroSecreto){
+            msg.innerText = `O número escolhido é menor que ${numeroPalpite}. Você tem ${10 - tentativas} tentativas restantes!`;
+        }
+        else{
+            msg.innerText = "Algo deu errado. Tente novamente.";
+        }
+
+        document.getElementById("palpite").value = "";
+        document.getElementById("palpite").focus();
+    }
+
+    document.getElementById("palpite").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            iniciarJogo();
+        }
+    });
+        // Focar no campo de palpite ao carregar a página
+        document.getElementById("palpite").focus();
+</script>
+
+</body>
+</html>
