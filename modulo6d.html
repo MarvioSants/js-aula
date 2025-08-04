@@ -74,6 +74,8 @@ Funções + feedback visual	Para deixar o jogo legal e didático-->
 
     <input type="number" id="palpite" placeholder="Digite seu palpite" /><br />
     <button onclick="iniciarJogo()">Tentar</button>
+    <button onclick="reiniciarJogo()">Reiniciar </button>
+
     <p id="mensagem"></p>
 
 </div>
@@ -129,8 +131,20 @@ Funções + feedback visual	Para deixar o jogo legal e didático-->
             iniciarJogo();
         }
     });
-        // Focar no campo de palpite ao carregar a página
         document.getElementById("palpite").focus();
+
+        function reiniciarJogo(){
+            location.reload();
+
+            let palpitesFeitos = [];
+
+        
+        palpitesFeitos.push(numeroPalpite);
+        document.getElementById("mensagem").innerText += `\nPalpites: ${palpitesFeitos.join(", ")}`;
+
+        }
+
+        
 </script>
 
 </body>
