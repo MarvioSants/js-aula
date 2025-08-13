@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💡 Arrays, Objetos e DOM Dinâmico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #5b65a1, #ebedee);
+      color: #213141;
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.8;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #34495e;
+      margin-bottom: 30px;
+      text-align: center;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    h1::after {
+      content: "🚀";
+      position: absolute;
+      right: -40px;
+      top: 0;
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: #2c3e50;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-left: 6px solid #3498db;
+      padding-left: 15px;
+      background-color: #ecf0f1;
+      border-radius: 6px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      background-color: #c7d0d1;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border-left: 5px solid #10b981;
+    }
+
+    ul, ol {
+      margin-left: 30px;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      list-style: none;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    ul li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+    }
+
+    ol li {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      list-style: none;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    ol li::before {
+      counter-increment: item;
+      content: counter(item) "️⃣ ";
+      counter-reset: item;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+      color: #3498db;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #2980b9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>💡 Arrays, Objetos e DOM Dinâmico</h1>
+
+  <p>Este módulo é uma introdução ao uso de arrays, objetos e manipulação dinâmica do DOM em JavaScript. Prepare-se para transformar páginas estáticas em experiências interativas!</p>
+
+  <h2>Objetivos do Módulo</h2>
+  <ul>
+    <li>Compreender o conceito de arrays e como utilizá-los.</li>
+    <li>Aprender sobre objetos e suas propriedades.</li>
+    <li>Manipular o DOM de forma dinâmica usando JavaScript.</li>
+  </ul>
+
+  <h2>Conteúdo</h2>
+  <ol>
+    <li>Introdução aos Arrays</li>
+    <li>Objetos em JavaScript</li>
+    <li>Manipulação Dinâmica do DOM</li>
+  </ol>
+</body>
+</html>
