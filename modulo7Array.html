@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array no js</title>
+</head>
+<body>
+
+    <h1>Array</h1>
+
+
+    
+
+    <script>
+        let tripulacao = ["Luffy",
+          " Roronoa Zoro",
+          " Nami",
+           " Usopp",
+            " Sanji",
+             " Tony Tony Chopper",
+              " Nico Robin",
+               " Franky",
+            ];
+
+    /*
+    alert(tripulacao[7])// Franky
+    */
+   tripulacao.unshift("Jinbe")//Add elemento (Jinbe) no início do array
+    tripulacao.push(" Brook");//Add elemneto(Brook) no final do array
+
+    
+    //tripulacao.pop(); // Remove o último elemento do array
+    //tripulacao.shift(); // Remove o primeiro elemento do array
+    alert(tripulacao)
+
+    //alert(tripulacao[2])//Mostra o elemento do indicie 1 do array(Zoro)
+
+    tripulacao.splice(0, 0)// Remove o elemento do índice 2(Zoro) do array
+    alert(tripulacao)
+
+    alert(tripulacao[2])//O elemento do índice 2 agora é Nami
+
+    tripulacao.splice(2, 0 , "Nico Robin")// Adiciona Nico Robin no índice 2 do array
+    alert(tripulacao)
+
+    tripulacao.forEach(function(nome){
+        alert("Membro: "+nome);//Aqui a funcão percorre todo o array
+    });
+
+    let gritoNami = tripulacao[1].toUpperCase().trim()+", ME AJUDA!!!"
+        alert(gritoNami); //Aqui a função deixa o nome em maiúsculo e remove os espaços
+
+    //.................................................
+
+    let gritos = tripulacao.map(function(nome) {// map transforma cada item de um array e cria um novo array
+    return nome.toUpperCase() + "!!!";// Aqui a função deixa todos os nomes em maiúsculo e adiciona !!! no final
+
+    //Vira um novo array
+    });
+        
+    alert(JSON.stringify(gritos));// JSON.stringify transforma o array em uma string para ser exibida no alert
+
+
+    //.................................................
+/*
+    let nomeProcurado = prompt("Qual nome você quer encontrar?").toUpperCase().trim();
+    let nomeEncontrado = tripulacao.find(function(nome){
+        return nome.toUpperCase().trim() === nomeProcurado;
+    });
+    */
+    
+    let letra = "r";// Aqui você pode mudar a letra para procurar outros nomes
+    let nomeComS = tripulacao.filter(function(nome){
+        return nome.trim().toLowerCase().startsWith(letra.toLowerCase());// Aqui a função filtra os nomes que começam com S
+    });
+
+    alert(nomeComS);
+
+
+    </script>
+</body>
+</html>

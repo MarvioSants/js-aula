@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔎 Métodos avançados de Arrays</title>
+</head>
+<body>
+    
+
+    <script>
+        let nakamas = [
+            " Luffy",
+            " Zoro",
+            " Nami",
+            " Usopp",
+        ]
+
+        nakamas.splice(2, 1); // remove o elemento na posição 2.
+        alert(nakamas);
+        
+        nakamas.splice(2, 0, " Sanji"); // adiciona o elemento "Sanji" na posição 2.
+        alert(nakamas);
+
+        nakamas.splice(1, 1, " Chopper")// substitui o elemento na posição 1 por "Chopper".
+        alert(JSON.stringify(nakamas)); // JSON.stringify transforma o array em uma string para ser exibida no alert (Colchetes e aspas duplas).
+    </script>
+</body>
+</html>
