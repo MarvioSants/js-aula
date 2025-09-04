@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        let personagem = {
+            nome: 'Luffy',
+            cargo: 'Capitão',
+            recompensa: 3000000000
+        }
+
+        alert(personagem.nome)
+        //alert(personagem.cargo)
+        alert(personagem['cargo'])
+        //alert(personagem.recompensa)
+        alert(personagem['recompensa'])
+
+        /*Objeto dentro de arrays*/
+        let tripulacao = [
+            { nome:'Luffy', cargo:'Capitão'},
+            { nome:'Zoro', cargo:'Espadachim'},
+            { nome:'Nami',cargo:'Navegadora'}
+        ];
+        //alert(tripulacao[2].nome)
+        alert( tripulacao[2].nome +": "+"O cargo do(a) tripulante é: " +tripulacao[2].cargo)
+    </script>
+</body>
+</html>
+
