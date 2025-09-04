@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio de metodos</title>
+</head>
+<body>
+    <h1>Exercicios de metodos</h1>
+
+    <script>
+
+        let personagens = [' Luffy', ' Zoro', ' Nami', ' Usopp', ' Sanji'];
+        let recompensas = [1500000000, 320000000, 66000000, 30000000, 77000000];
+
+        // Adicione um novo personagem "Robin" ao final do array personagens e "Chopper" ao início do array.
+        personagens.push(' Robin');
+        personagens.unshift('Chopper');
+
+        alert('Personagens: ' + personagens);
+
+        //Remova o último personagem do array. Remova o primeiro personagem do array
+        personagens.pop();
+        personagens.shift();
+        alert('Personagens: ' + personagens);
+
+        //Substitua o personagem "Usopp" por "Franky" no array personagens.
+        personagens.splice(3, 1, ' Franky');
+        alert('Personagens: ' + personagens);
+
+        //Crianddo um novo array com os 3 primeiros personagens do array personagens.
+        let novosPersonagens = personagens.slice(0, 3);
+        alert('Novos Personagens: ' + novosPersonagens);
+
+        /*Encontre a primeira recompensa maior que 1 milhão.Liste todas as recompensas maiores que 1 milhão.*/
+        let primeiraRecompensa = recompensas.find(
+            function(recompensa){
+                return recompensa > 1000000;
+            }
+        );
+        alert('Primeira recompensa maior que 1 milhão: ' + primeiraRecompensa);
+
+        let maiorQueUmMilhao = recompensas.filter(
+            function(recompensa){
+                return recompensa > 1000000;
+            }
+        );
+        alert('Recompensas maiores que 1 milhão: ' + maiorQueUmMilhao);
+
+        //Crie um novo array com todas as recompensas dobradas.
+        let recompensasDobradas = recompensas.map(
+            function(recompensa){
+                return recompensa * 2;
+            }
+        );
+        alert('Recompensas dobradas: ' + recompensasDobradas);
+
+        /*Organize as recompensas em ordem crescente. Inverta a ordem depois.*/
+        recompensas.sort(
+            function(a, b){
+                return a - b;
+            }
+        );
+        alert('Recompensas em ordem crescente: ' + recompensas);
+        recompensas.reverse();
+        alert('Recompensas em ordem decrescente: ' + recompensas);
+
+    /*Verifique se "Zoro" ainda está no array de personagens.Verifique se todas as recompensas são maiores que 100 mil. Verifique se alguma recompensa passa de 3 milhões.*/
+        let roronoZoro = personagens.includes(' Zoro');
+        alert('Zoro está na lista de personagens? ' + roronoZoro);
+
+        let recompensasMaioresQueCemMil = recompensas.every(
+            function(recompensa){
+                return recompensa >100000;
+            }
+        );
+        alert('Todas as recompensas são maiores que 100 mil? ' + recompensasMaioresQueCemMil);
+
+        let algumaMaiorQue3Milhoes = recompensas.some(
+            function(recompensa){
+                return recompensa > 3000000;
+            }
+        );
+        alert("Alguma recompensa passa de 3 milhões? " + algumaMaiorQue3Milhoes);
+        
+        //Calcule a soma de todas as recompensas.
+        let somaRecompensas = recompensas.reduce(
+            function(recompensaAcum, recompensaAtual){
+                return recompensaAcum + recompensaAtual;
+            }
+        );
+        alert('Soma de todas as recompensas: ' + somaRecompensas);
+
+    </script>
+    
+</body>
+</html>

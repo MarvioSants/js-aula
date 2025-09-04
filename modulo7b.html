@@ -17,13 +17,62 @@
         ]
 
         nakamas.splice(2, 1); // remove o elemento na posição 2.
-        alert(nakamas);
+        //alert(nakamas);
         
         nakamas.splice(2, 0, " Sanji"); // adiciona o elemento "Sanji" na posição 2.
-        alert(nakamas);
+        //alert(nakamas);
 
         nakamas.splice(1, 1, " Chopper")// substitui o elemento na posição 1 por "Chopper".
-        alert(JSON.stringify(nakamas)); // JSON.stringify transforma o array em uma string para ser exibida no alert (Colchetes e aspas duplas).
+        //alert(JSON.stringify(nakamas)); // JSON.stringify transforma o array em uma string para ser exibida no alert (Colchetes e aspas duplas).
+
+        let piratasDoRuivo = [
+            " Shanks",
+            " Benn Beckman",
+            " Lucky Roo",
+            " Yasopp",
+            " Rockstar",
+            " Bonk Punch",
+        
+        ]
+
+        let parte1 = piratasDoRuivo.slice(0 , 3);// cria um novo array com os elementos do array piratasDoRuivo, do índice 0 ao índice 2 (3-1).        
+        //alert(parte1);
+
+        let parte2 = piratasDoRuivo.slice(3);// cria um novo array com os elementos do array piratasDoRuivo, do índice 3 até o final do array.        
+        //alert(parte2);
+
+        let recompensas = [100_000_000, 320_000_000, 66_000_000, 1_500_000_000];
+        //encontra a maior recompensa acima de 300 milhões.
+
+        let maior300 = recompensas.find(valor => valor >300_000_000);// find retorna o primeiro valor que satisfaz a condição.
+        //alert(maior300);
+
+        let totalRecompensas = recompensas.reduce((acumulador, valor)=>acumulador+valor, 0);// reduce acumula os valores do array, iniciando em 0.
+        //alert(totalRecompensas);
+//.............................................................................
+
+        //cria um novo array com as recompensas acima de 100 milhões.
+        let acimaDe100 = recompensas.filter(valor => valor >100_000_000);// filter cria um novo array com os valores que satisfazem a condição.
+        //alert(acimaDe100.join(" , "));// join junta os elementos do array em uma string, separados por " - ".
+
+        let numeros = [12, 67,23, 1, 4, 8 ];
+        //alert(numeros.sort());// sort ordena os elementos do array em ordem crescente.
+
+        //alert(numeros.sort((a, b) => a - b))
+
+
+        alert(piratasDoRuivo.includes(" Yasopp"));// includes verifica se o array contém o elemento "Yasopp" e retorna true ou false.
+        alert(piratasDoRuivo.includes(" Kuro"));// includes verifica se o array contém o elemento "Kuro" e retorna true ou false.
+
+        let notas = [7, 9, 6, 5, 8];
+        alert(notas.every(notas => notas >=5));// every verifica se todos os elementos do array satisfazem a condição e retorna true ou false.
+
+        alert(notas.some(notas => notas >=9));// some verifica se algum elemento do array satisfaz a condição e retorna true ou false.
+
+    
+    
+
+    
     </script>
 </body>
 </html>
