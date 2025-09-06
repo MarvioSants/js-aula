@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvendo meu aprendizado sobre OBJETOS</title>
+</head>
+<body>
+
+    <script>
+
+        let personagem = {
+            nome: 'Luffy',
+            cargo: 'Capitão',
+            recompensa: 3000000000
+        };
+/*1. alterando valores dentro do objeto*/
+        personagem.recompensa = 4500000000;
+        alert(`a nova recompensa de ${personagem.nome} é de ${personagem.recompensa} berries`)
+
+/*2. Adicionando novas propriedades dinamicamente*/
+        personagem.akumanomi = 'Gomu Gomu no Mi';
+        alert(`A fruta comida por ${personagem.nome} foi a ${personagem.akumanomi} ` );
+
+/*3. Percorrendo o array de objetos com um for*/
+        let tripulacao = [
+            {nome: 'Luffy', cargo: 'Capitão', recompensa: 4500000000, fruta: 'Gomu Gomu no Mi'},
+            {nome: 'Zoro', cargo: 'Mestre Espadachim', recompensa: 320000000, fruta: null},
+            {nome: 'Nami', cargo: 'Navegadora', recompensa: 66000000, fruta: null},
+            {nome: 'Usopp', cargo: 'Atirador', recompensa: 200000000, fruta: null},
+        ];
+
+        for(let i = 0; i < tripulacao.length; i++){
+            alert(`Nome: ${tripulacao[i].nome} -> Cargo: ${tripulacao[i].cargo} -> Recompensa: ${tripulacao[i].recompensa} -> Fruta: ${tripulacao[i].fruta}`);
+            
+        }
+
+/*4. Percorrendo o array de objetos com forEach (Mais moderno)*/
+              tripulacao.forEach(
+                function(tripiulante){
+                    alert(`Nome: ${tripiulante.nome} - Cargo: ${tripiulante.cargo}`);
+                    
+                }
+        );
+
+
+
+    </script>
+    
+</body>
+</html>

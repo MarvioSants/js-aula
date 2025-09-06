@@ -9,19 +9,26 @@
 
 
     <script>
+
+        //objetos simples
         let personagem = {
             nome: 'Luffy',
             cargo: 'Capitão',
             recompensa: 3000000000
         }
 
+        //acessando propriedades do objeto
         alert(personagem.nome)
         //alert(personagem.cargo)
+        
+        //acessando propriedades do objeto com colchetes
         alert(personagem['cargo'])
-        //alert(personagem.recompensa)
-        alert(personagem['recompensa'])
 
+        alert(personagem['recompensa'])
+/*..............................................................................................*/
+       
         /*Objeto dentro de arrays*/
+
         let tripulacao = [
             { nome:'Luffy', cargo:'Capitão'},
             { nome:'Zoro', cargo:'Espadachim'},
@@ -30,13 +37,17 @@
         //alert(tripulacao[2].nome)
         alert( tripulacao[2].nome +": "+"O cargo do(a) tripulante é: " +tripulacao[2].cargo)
         
-
+/*...............................................................................................*/
+        
         //Arrays dentro de objetos
+
         let capitao = {
             nome: 'M. D. Luffy',
             habilidade:['Haki do rei', 'Haki do armamento', 'Haki da observação']
         };
         alert(capitao.nome + ": " +capitao.habilidade[1])
+
+        
     </script>
 
 </body>
