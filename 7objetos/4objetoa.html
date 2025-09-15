@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos avançados de objetos</title>
+</head>
+<body>
+    <script>
+        /*Objeto com métodos (funções internas)*/
+        let banco = {
+            nome:'Banco do Brasil',
+            agencia: '0001',
+            saldo: 500,
+            depositar: function(valor){
+                this.saldo += valor;
+                alert(`Depositaram |${valor} na sua conta.\n Seu saldo atual é de ${this.saldo}`);
+            },
+            sacar: function(valor){
+                if(valor > this.saldo){
+                    alert('Saldo insuficiente para saque');
+                    return;
+                }
+                this.saldo -= valor;
+                alert(`Você sacou ${valor} da sua conta.\n Seu saldo atual é de ${this.saldo}`);
+            }
+
+            };
+            banco.depositar(300);
+            banco.sacar(759);
+
+            let personagem = {
+                nome: 'Trafalgar Law',
+                cargo: 'Capitão dos Piratas Heart',
+                recompesa: 500000000,
+                falar: function() {
+                    return `Eu sou ${this.nome}, ${this.cargo}, minha recompensa é de ${this.recompesa} Berries!`;
+                }
+                
+            };
+            alert(personagem.falar());
+    </script>
+    
+</body>
+</html>
