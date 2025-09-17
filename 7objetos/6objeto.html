@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3️⃣ Criando arrays dentro de objetos para estatísticas</title>
+</head>
+<body>
+    <script>
+        let estatísticas = {
+            vendas: [100, 150, 111],
+            visitas: [300, 402, 222],
+            conversoes: [12, 30, 21],
+            clientes: ['Ana', 'Bia', 'Carlos'],
+
+        adicionarVenda: function (valor) {
+            this.vendas.push(valor);
+        },
+
+        totalVisitas: function () {
+            return this.visitas.reduce(
+                function (total, atual) {
+                    return total + atual;               
+                }
+            );
+        },
+        mediaDeConversoes: function() {
+            const total = this.conversoes.reduce(
+                function (total, atual) {
+                    return total + atual;
+                }, 0
+            );
+
+            return total / this.conversoes.length;
+        }
+
+    };
+
+    //alert(estatísticas.totalVisitas());
+    //alert(estatísticas.mediaDeConversoes());
+   alert(`O total de visitas na semana foi de ${estatísticas.totalVisitas()} e a média deconversões foi de ${estatísticas.mediaDeConversoes()}`);
+   alert(`As vendas foram feitas para os clientes: ${estatísticas.clientes.join(', ')}`);    
+        
+    </script>
+    
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,26 @@
 <body>
     <script>
         /*2️⃣ Atualizando objetos dentro de um array de objetos
-        Imagine que queremos alterar a recompensa de um membro da tripulação:*/
+        Imagine que queremos alterar o valor de um determinado veículo:*/
 
-
+        let carros = [
+            {marca: 'Ford', modelo: 'Mustang', ano: 1969, cor: 'vermelho', valor: '$30000'},
+            {marca: 'Chevrolet', modelo: 'Camaro', ano: 1970, cor: 'preto', valor: '$35000'},
+            {marca: 'Dodge', modelo: 'Charger', ano: 1968, cor: 'azul, branco', valor: '$40000'},
+        ];
+        alert(carros[0].marca);
+        
+        //atualizando o valor do carro Ford Mustang
+        let marcaBusca = 'Ford';
+        let modelo1 = carros.find (function(carro){
+            return carro.marca === marcaBusca && carro.modelo === 'Mustang';
+        });
+        if (modelo1) {
+            modelo1.valor = '$340000'; // Atualizando o valor
+            alert(`Valor do ${modelo1.marca} ${modelo1.modelo} foi atualizado para: ${modelo1.valor}`);
+        }else{
+            alert('Carro não encontrado');
+        }
     </script>
 </body>
 </html>
