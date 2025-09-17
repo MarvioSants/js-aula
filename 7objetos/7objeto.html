@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4️⃣ Transformando uma lista de objetos em outro formato</title>
+</head>
+<body>
+    <script>
+        let time7 = [
+            {nome: 'Naruto', idade: 17, vila:'Folha'},
+            {nome: 'Sasuke', idade: 17, vila:'Folha'},
+            {nome: 'Sakura', idade: 16, vila:'Folha'},
+            {nome: 'Kakashi', idade: 30, vila:'Folha'},
+        ]
+
+        let nomes = time7.map(//map-> cria um novo array
+            function(personagem) {
+                return [personagem.nome+', ' +personagem.idade+', '+ personagem.vila];
+            }
+        );
+        alert(`O time 7 é composto por: ${nomes.join(', ')}.`);
+        
+
+
+    </script>
+</body>
+</html>
