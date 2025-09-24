@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        //objetos aninhados(nested objects)
+
+        let funcionarios = {
+            nome: 'Marcio',
+            idade: 23,
+            cargo: 'Estagiario',
+            habilidades: {
+                linguagens: ['javaScript', 'java', 'python'],
+                codFonte: ['vs code', 'pyCharm', 'eclipse']
+            }
+        };
+        alert(funcionarios.habilidades.codFonte[0]);
+
+
+        const livro = {
+            titulo: 'O senhor dos aneis',
+            autor: 'J.R.R. Tolkien',
+            ano: 1954,
+            detalhes: {
+                editora: 'HarperCollins',
+                paginas: 1216,
+                genero: 'Fantasia'
+            }
+        };
+        alert(`O livro ${livro.titulo} foi escrito por ${livro.autor} em ${livro.ano}, publicado pela editora ${livro.detalhes.editora}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5️⃣ Agrupando dados com .reduce()</title>
+</head>
+<body>
+    <script>
+        const dadosVendas = [
+            {mes: 'Janeiro', vendas: 1500, vendedor: 'vendedorA'},
+            {mes: 'Fevereiro', vendas: 2000, vendedor: 'vendedorB'},
+            {mes: 'Março', vendas: 3000, vendedor: 'vendedorC'},
+            {mes: 'Abril', vendas: 2500, vendedor: 'vendedorC'},
+            {mes: 'Maio', vendas: 4000, vendedor: 'vendedorA'},
+            {mes: 'Junho', vendas: 3500, vendedor: 'vendedorB'},
+
+        ]; 
+        //criar um array com o valor total das vendas
+        const vendas = dadosVendas.reduce(
+            function (acuTotal, item) {//acuTotal: é um array vazio que vai acumulando os valores.
+                acuTotal.push(item.vendas);
+                console.log(acuTotal);
+                return acuTotal;
+            }, []
+        )
+        console.log('Total de vendas: ' + vendas);
+
+        //total de vendas no ano
+
+    </script>
+</body>
+</html> 
