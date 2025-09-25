@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7️⃣ Criando e manipulando com destructuring</title>
+</head>
+<body>
+
+    <script>
+        //7️⃣ Criando e manipulando com destructuring
+
+        let personAvancado = {
+            nome: 'Sanji',
+            cargo: 'Cozinheiro',
+            habilidades: {
+                luta: ['Black Leg', 'Diable Jambe'],
+                cozinha: ['Soba', 'Okonomiyaki', 'Tempurá']
+        }
+    };
+    alert(personAvancado.habilidades.cozinha[1]);
+
+    let {nome, cargo } = personAvancado;
+    alert(`Nome: ${nome} - Cargo: ${cargo}`);
+
+    </script>
+    
+</body>
+</html>
