@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧩 Bloco 3 — Manipulação Dinâmica do DOM</title>
+</head>
+<body>
+    <h1>🧩 Bloco 3 — Manipulação Dinâmica do DOM</h1>
+
+    <div id="titulo">Olá</div>
+    <p class="descricao">Descrição</p>
+    <button>Clique aqui</button>
+
+    <script>
+        //Criando Elementos (createElement)
+        const body = document.body;// Pega o body do documento
+        const div = document.createElement('div');// Cria uma nova div
+        div.innerText = 'Olá, eu sou uma div criada dinamicamente!';// Adiciona texto à div
+        body.appendChild(div);
+
+        const elemById = document.getElementById('titulo');// Pega o elemento com id 'titulo'
+        const elemByClass = document.getElementsByClassName('descricao')[0];// Pega o primeiro elemento com a classe 'descricao'
+        const firstButton = document.querySelector('button');// Pega o primeiro botão do documento
+        const allButtons = document.querySelectorAll('button');// Pega todos os botões do documento
+        console.log(elemById);
+
+        //alterando conteúdo e atributos
+
+        elemById.innerContent = 'Olá, eu sou um título alterado dinamicamente!';// Altera o conteúdo do elemento com id 'titulo'
+        elemById.innerHTML = '<strong>Olá, eu sou <em>um titulo</em> alterado dinamicamente!</strong>';// Altera o conteúdo do elemento com id 'titulo' com HTML
+        elemById.setAttribute('data-id', '123')// Adiciona um atributo data-id ao elemento com id 'titulo'
+        console.log(elemById.dataset.id)// Pega o valor do atributo data-id do elemento com id 'titulo'
+
+        elemById.style.color = 'blue';//
+        elemById.classList.add('ativo')
+        elemById.classList.remove('inativo')
+        elemById.classList.toggle('selecionado')// Adiciona ou remove a classe 'selecionado' do elemento com id 'titulo'
+        console.log(elemById.classList.contains('ativo'))// Verifica se o elemento com id 'titulo' possui a classe 'ativo'
+
+        //vamos praticar aqui usando um banco como exemplo
+        const banco = {
+            nome: 'Banco Legal',
+            cor: 'lilac',
+            descricao: 'O melhor banco do Brasil',
+            id: '001'
+        }
+
+        elemById.innerHTML = `<strong>${banco.nome}</strong>`;
+        elemById.style.color = banco.cor;
+        elemById.setAttribute('data-id', banco.id);
+
+    </script>
+    
+</body>
+</html>

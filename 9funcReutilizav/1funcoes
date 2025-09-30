@@ -1,0 +1,29 @@
+🧩 Bloco 4 — Funções Reutilizáveis
+
+Evitar repetição de código
+
+Funções que recebem parâmetros
+
+Funções que retornam valores
+
+Aplicando funções nos Arrays, Objetos e DOM
+
+🧠 Tópicos:
+
+Callback, Closures
+
+Funções puras e efeitos colaterais
+
+Arrow functions
+
+Desestruturação
+
+Rest/Spread
+
+Template literals
+
+Operador ternário
+
+Classes e orientação a objetos
+
+📘 Mini-projeto: Simulador de carrinho de compras

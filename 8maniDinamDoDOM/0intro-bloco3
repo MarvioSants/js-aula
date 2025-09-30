@@ -1,0 +1,25 @@
+🧩 Bloco 3 — Manipulação Dinâmica do DOM
+
+Criar elementos (createElement)
+
+Alterar conteúdo (textContent, innerHTML)
+
+Adicionar no HTML (appendChild, append)
+
+Remover elementos (removeChild)
+
+Alterar classes e estilos dinamicamente
+
+🧠 Tópicos:
+
+DOM: getElementById, querySelector, innerText, innerHTML
+
+Manipulação de elementos
+
+Eventos: onclick, onchange, keydown, etc.
+
+Formulários e validação básica
+
+LocalStorage e SessionStorage
+
+📘 Projeto: To-do list com salvamento no localStorage
